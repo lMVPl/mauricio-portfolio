@@ -1,41 +1,47 @@
 /**
  * Single source of truth for every word on the site.
- * Everything here is taken from resume.pdf (Alejandro Marcano Van Grieken).
+ * Content adapted from Mauricio Vázquez Pérez’s CV; project details reflect documented work.
  * Components only read from this file.
  *
- * GitHub, LinkedIn and COMMUNITY were provided directly by Alejandro (not in the PDF).
- * Not available (left empty on purpose): certifications, project repositories.
+ * LinkedIn and GitHub URLs provided by Mauricio; other personal URLs are intentionally blank.
+ * Only verified professional experience and credentials are included.
  */
 
 /* ───────────────────────── Profile ───────────────────────── */
 
 export const PROFILE = {
-  name: "Alejandro Marcano Van Grieken",
-  firstName: "Alejandro",
-  initials: "AM",
-  role: "Data Engineer",
-  /** Full title line from the résumé header. */
-  roles: ["Data Engineer", "Data Analyst", "Product Owner", "AI Developer", "Instructor"],
-  email: "dataconale@gmail.com",
-  phone: "+34 632 52 43 05",
-  phoneHref: "tel:+34632524305",
-  location: "Madrid, Spain",
-  website: "https://www.alemarcano.framer.website",
-  websiteLabel: "alemarcano.framer.website",
-  github: "https://github.com/programaconale",
-  linkedin: "https://www.linkedin.com/in/alemarcano/",
-  resume: "/Alejandro-Marcano-Van-Grieken-Resume.pdf",
-  /** Google Calendar appointment schedule embed. Empty = booking buttons fall back to email. */
-  booking: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ1vI_KfA7JpHEdJQChQjRMtiqGeCID33Ro_P-3mV91RUBqfvS-ZYQExz1wuEQAaIhwZCohqb1oZ?gv=true",
+  name: "Mauricio Vázquez Pérez",
+  firstName: "Mauricio",
+  initials: "MV",
+  role: "Data Analyst",
+  roles: [
+    "Data Analyst",
+    "Data Quality Analyst",
+    "Data Science",
+    "IT & Operations Analyst",
+  ],
+  email: "mauriciovp00@outlook.com",
+  phone: "+52 55 3471 7043",
+  phoneHref: "tel:+525534717043",
+  location: "Cuautitlán Izcalli, Mexico",
+  website: "",
+  websiteLabel: "",
+  github: "https://github.com/lMVPl",
+  linkedin: "https://www.linkedin.com/in/mauricio-vp/",
+  resume: "/Mauricio-Vazquez-Perez-CV.pdf",
+  booking: "",
   resumeSummary:
-    "Data professional with a strong background in data engineering, AI, and automation, with experience across startups, consultancies, and freelance work, specializing in translating business requirements into scalable data products. Experienced Product Owner managing projects from MVP to production-ready AI solutions. Passionate about teaching, sharing knowledge through training, articles, and tech events.",
-  /** A second short line, also from the résumé. */
-  aboutLine: "Ranked first position in the Systems Engineering graduating class.",
-  /** Paraphrase of the résumé's own wording (profile paragraph). */
-  quote: "Translating business requirements into scalable data products.",
-  current: { title: "Data Engineer", org: "Aditelsa", client: "Indra Minsait" },
-  /** ID-card fields derived from the résumé (initials + graduation year, current discipline). */
-  card: { id: "AMVG-2019", dept: "Data Engineering", validTill: "7 years" },
+    "Computer Systems Engineer with nearly four years of experience in data quality, AI data pipelines, and IT operations. Experienced in Python and SQL validation, multimodal dataset quality assurance, Excel-based ETL, reporting, and operational process improvement. Interested in Data Analyst and Data Science opportunities in Mexico or remotely.",
+  aboutLine:
+    "Computer Systems Engineer · Google Data Analytics · Oracle Next Education Data Science",
+  quote:
+    "Turning complex data into reliable insights and practical improvements.",
+  current: {
+    title: "IT & Operations Analyst",
+    org: "MTM Soluciones",
+    client: "",
+  },
+  card: { id: "MVP-DATA", dept: "Data Analytics", validTill: "Present" },
 } as const;
 
 /* ───────────────────────── Navigation ───────────────────────── */
@@ -51,7 +57,6 @@ export const NAV: NavItem[] = [
   { id: "contact", label: "Contact" },
 ];
 
-
 /* ───────────────────────── Skills ───────────────────────── */
 
 export type Skill = {
@@ -64,106 +69,71 @@ export type Skill = {
 export type SkillGroup = { family: string; short: string; skills: Skill[] };
 
 /**
- * Groups follow the résumé's SKILLS section. Duplicates in the résumé (PySpark, OracleDB)
- * appear once. "Tools & Practices" collects tools/methods named in the work-experience bullets.
+ * Groups reflect documented skills and tools from Mauricio’s CV.
  */
 export const SKILL_GROUPS: SkillGroup[] = [
   {
-    family: "Programming Languages",
+    family: "Programming & Query Languages",
     short: "Languages",
     skills: [
       { id: "python", name: "Python", symbol: "Py" },
-      { id: "javascript", name: "JavaScript", symbol: "Js" },
-      { id: "dart", name: "Dart", symbol: "Da" },
       { id: "r", name: "R", symbol: "R" },
       { id: "java", name: "Java", symbol: "Ja" },
-      { id: "c", name: "C", symbol: "C" },
+      { id: "javascript", name: "JavaScript", symbol: "Js" },
     ],
   },
   {
-    family: "Data Engineering",
-    short: "Data Eng.",
+    family: "Data Analysis & Quality",
+    short: "Data",
     skills: [
-      { id: "fabric", name: "Microsoft Fabric", symbol: "Fb" },
-      { id: "pyspark", name: "PySpark", symbol: "Ps" },
-      { id: "airflow", name: "Airflow", symbol: "Af" },
-      { id: "dbt", name: "DBT", symbol: "Db" },
-      { id: "docker", name: "Docker", symbol: "Dk" },
-      { id: "kafka", name: "Kafka", symbol: "Kf" },
-      { id: "snowflake", name: "Snowflake", symbol: "Sf" },
-      { id: "bigquery", name: "BigQuery", symbol: "Bq" },
-      { id: "git", name: "Git", symbol: "Gt" },
-    ],
-  },
-  {
-    family: "AI / Data Science",
-    short: "AI / DS",
-    skills: [
-      { id: "tensorflow", name: "TensorFlow", symbol: "Tf" },
-      { id: "pytorch", name: "PyTorch", symbol: "Pt" },
-      { id: "keras", name: "Keras", symbol: "Ks" },
-      { id: "scikitlearn", name: "scikit-learn", symbol: "Sk" },
-      { id: "openai", name: "OpenAI", symbol: "Oa" },
-      { id: "langchain", name: "LangChain", symbol: "Lc" },
-      { id: "embeddings", name: "Embeddings", symbol: "Em" },
-      { id: "pandas", name: "pandas", symbol: "Pd" },
+      { id: "etl", name: "ETL", symbol: "Et" },
+      { id: "datacleaning", name: "Data Cleaning", symbol: "Dc" },
+      { id: "datavalidation", name: "Data Validation", symbol: "Dv" },
+      { id: "pandas", name: "Pandas", symbol: "Pd" },
       { id: "numpy", name: "NumPy", symbol: "Np" },
-      { id: "jupyter", name: "Jupyter", symbol: "Jp" },
+      { id: "pyspark", name: "PySpark", symbol: "Ps" },
+      { id: "scikitlearn", name: "scikit-learn", symbol: "Sk" },
+      { id: "llm", name: "LLMs", symbol: "AI" },
     ],
   },
   {
-    family: "BI & Analytics",
+    family: "Analytics & BI",
     short: "BI",
     skills: [
-      { id: "powerbi", name: "Power BI", symbol: "Pb" },
-      { id: "lookerstudio", name: "Looker Studio", symbol: "Ls" },
       { id: "tableau", name: "Tableau", symbol: "Tb" },
-      { id: "qlik", name: "QlikSense", symbol: "Qs" },
-      { id: "jasper", name: "JasperReports", symbol: "Jr" },
+      { id: "excel", name: "Excel", symbol: "Ex" },
       { id: "googleanalytics", name: "Google Analytics", symbol: "Ga" },
     ],
   },
   {
-    family: "Databases & Cloud",
-    short: "DB & Cloud",
+    family: "Databases",
+    short: "Databases",
     skills: [
-      { id: "mongodb", name: "MongoDB", symbol: "Mg" },
-      { id: "postgresql", name: "PostgreSQL", symbol: "Pg" },
       { id: "mysql", name: "MySQL", symbol: "My" },
-      { id: "oracle", name: "OracleDB", symbol: "Or" },
-      { id: "firebase", name: "Firebase", symbol: "Fi" },
+      { id: "postgresql", name: "PostgreSQL", symbol: "Pg" },
       { id: "sqlserver", name: "SQL Server", symbol: "Ss" },
-      { id: "gcp", name: "GCP", symbol: "Gc" },
-      { id: "aws", name: "AWS", symbol: "Aw" },
     ],
   },
   {
-    family: "Backend & No-Code",
-    short: "Backend",
+    family: "IT & Business Systems",
+    short: "IT",
     skills: [
-      { id: "django", name: "Django", symbol: "Dj" },
-      { id: "flask", name: "Flask", symbol: "Fl" },
-      { id: "nodejs", name: "Node.js", symbol: "No" },
+      { id: "sharepoint", name: "SharePoint", symbol: "Sp" },
+      { id: "googleworkspace", name: "Google Workspace", symbol: "Gw" },
+      { id: "odoo", name: "Odoo ERP", symbol: "Od" },
+      { id: "linux", name: "Linux Fundamentals", symbol: "Lx" },
+    ],
+  },
+  {
+    family: "Development & Collaboration",
+    short: "Tools",
+    skills: [
+      { id: "git", name: "Git", symbol: "Gt" },
+      { id: "github", name: "GitHub", symbol: "Gh" },
+      { id: "vscode", name: "Visual Studio Code", symbol: "Vs" },
       { id: "notion", name: "Notion", symbol: "Nt" },
-      { id: "airtable", name: "Airtable", symbol: "At" },
-      { id: "framer", name: "Framer", symbol: "Fr" },
-      { id: "glide", name: "Glide", symbol: "Gl" },
-      { id: "n8n", name: "n8n", symbol: "N8" },
-      { id: "flutterflow", name: "FlutterFlow", symbol: "Ff" },
-    ],
-  },
-  {
-    family: "Tools & Practices",
-    short: "Practices",
-    skills: [
-      { id: "etl", name: "ETL", symbol: "Et" },
-      { id: "warehouse", name: "Data Warehouse", symbol: "Dw" },
-      { id: "llm", name: "LLMs", symbol: "Ll" },
-      { id: "agile", name: "Agile / SCRUM", symbol: "Ag" },
       { id: "jira", name: "JIRA", symbol: "Ji" },
-      { id: "confluence", name: "Confluence", symbol: "Cf" },
-      { id: "streamlit", name: "Streamlit", symbol: "St" },
-      { id: "linux", name: "Linux", symbol: "Lx" },
+      { id: "sop", name: "SOP Documentation", symbol: "So" },
     ],
   },
 ];
@@ -185,89 +155,60 @@ export type Experience = {
 
 export const EXPERIENCE: Experience[] = [
   {
-    id: "aditelsa",
-    org: "Aditelsa",
-    client: "Indra Minsait",
-    mode: "Madrid",
-    title: "Data Engineer",
-    start: "2025-05",
+    id: "mtm",
+    org: "MTM Soluciones",
+    mode: "Mexico",
+    title: "IT & Operations Analyst",
+    start: "2026-03",
     end: null,
-    period: "May 2025 – Present",
-    status: "Client project completed · Actively looking for new opportunities",
+    period: "Mar 2026 – Present",
     bullets: [
-      "Designed and implemented end-to-end ETL processes in Microsoft Fabric, migrating legacy architecture into a modern cloud ecosystem",
-      "Built a Data Warehouse architecture models to centralize ingestion and transformation layers, ensuring scalability and governance",
-      "Worked with JIRA and Confluence to structure epics, tasks, and subtasks, improving project clarity and delivery",
+      "Manage IT operations for approximately 40 users and 60 devices, including Google Workspace administration and asset inventory.",
+      "Designed and administer the company SharePoint site, including document libraries, permissions, lists, and calendars.",
+      "Built Excel-based trackers, ETL workflows, pricing models, and reports to support business decisions.",
+      "Authored four Standard Operating Procedures and support Odoo v17 ERP and online sales operations.",
     ],
   },
   {
-    id: "procesia",
-    org: "Procesia Consulting",
-    client: "INE",
-    mode: "remote",
-    title: "Data Product Owner",
-    start: "2023-12",
-    end: "2025-03",
-    period: "Dec 2023 – Mar 2025",
+    id: "training",
+    org: "Self-directed professional development",
+    mode: "Training",
+    title: "Data Analytics & Data Science Training",
+    start: "2025-02",
+    end: "2026-03",
+    period: "Feb 2025 – Mar 2026",
     bullets: [
-      "Reduced manual Excel workflows by 90%, cutting report delivery times from days to hours",
-      "Directed the migration of legacy processes (90% Excel-based) to modern stacks (Python, SQL, Airflow)",
-      "Led requirement gathering with clients and stakeholders, translating business needs into data-driven solutions using JIRA and Confluence",
+      "Completed Google Data Analytics Professional Certificate and Oracle Next Education Data Science program.",
+      "Practiced SQL, R, Tableau, MySQL, PostgreSQL, and machine-learning fundamentals through coursework.",
     ],
   },
   {
-    id: "crowdfarming",
-    org: "Crowdfarming",
-    mode: "hybrid in Madrid",
-    title: "Product Data Analyst / Engineer",
-    start: "2022-07",
-    end: "2023-12",
-    period: "Jul 2022 – Dec 2023",
+    id: "scale-coder",
+    org: "Scale AI",
+    mode: "Independent Contractor",
+    title: "AI Quality Assurance Coder",
+    start: "2023-03",
+    end: "2025-02",
+    period: "Mar 2023 – Feb 2025",
     bullets: [
-      "Built an AI-powered clustering solution for user complaints using Generative AI (LLMs, OpenAI API, n8n workflows)",
-      "Improved data consistency from 60% to 98% by developing a data quality program reconciling MongoDB and PostgreSQL sources",
-      "Delivered database reporting in PostgreSQL with Tableau and Streamlit",
+      "Developed Python and SQL validation scripts and queries to verify data integrity in AI pipelines.",
+      "Supported ingestion and flow of datasets for large-scale machine-learning processing.",
+      "Collaborated with machine-learning teams on data-quality requirements and dataset delivery.",
+      "Promoted after maintaining a quality rate above 80%.",
     ],
   },
   {
-    id: "innovativegx",
-    org: "InnovativeGX",
-    mode: "remote",
-    title: "Python and SQL Developer",
-    start: "2020-07",
-    end: "2022-07",
-    period: "Jul 2020 – Jul 2022",
+    id: "scale-qa",
+    org: "Scale AI",
+    mode: "Independent Contractor",
+    title: "Quality Assurance Specialist",
+    start: "2021-10",
+    end: "2023-03",
+    period: "Oct 2021 – Mar 2023",
     bullets: [
-      "Led full-cycle development of data-driven applications as both PM and Developer using Django, Flask, Linux Servers.",
-      "Automated JasperServer reports, cutting patient delivery time by 90% and manual work by 80%",
-      "Integrated Snowflake for cross-referencing genetic datasets, reducing query time by 40%",
-    ],
-  },
-  {
-    id: "instructor",
-    org: "Universidad Metropolitana and CultureLab",
-    mode: "freelance, remote",
-    title: "Instructor",
-    start: "2020-09",
-    end: "2021-07",
-    period: "Sep 2020 – Jul 2021",
-    bullets: [
-      "Conducted Fundae-sponsored corporate training in Python for Data Analysis, Advanced Python, and BigQuery",
-      "Taught university courses in Mathematics I, Algorithms & Programming, and Database Administration",
-    ],
-  },
-  {
-    id: "vikua",
-    org: "Vikua",
-    mode: "hybrid in Venezuela",
-    title: "Data Scientist and Product Owner",
-    start: "2018-06",
-    end: "2020-07",
-    period: "Jun 2018 – Jul 2020",
-    bullets: [
-      "Built a Data Warehouse in BigQuery using Cloud Functions and Looker Studio for GCP data visualization",
-      "Developed predictive models (regression and classification) with scikit-learn and Keras on public transport data",
-      "Applied Agile/SCRUM methodologies and created a chatbot using Google Dialogflow",
+      "Labeled and validated multimodal datasets spanning text, images, video, and 3D.",
+      "Maintained a quality rate above 80% and conducted post-process audits.",
+      "Investigated root causes of data-quality issues and provided actionable feedback.",
     ],
   },
 ];
@@ -285,28 +226,24 @@ export type Education = {
 
 export const EDUCATION: Education[] = [
   {
-    id: "unimet",
-    school: "Universidad Metropolitana",
-    place: "Caracas",
-    degree: "Software Engineering",
-    start: "2015-09",
-    end: "2019-12",
-    period: "Sep 2015 – Dec 2019",
-    bullets: [
-      "GPA: 17.28/20 — 100% scholarship for academic merit",
-      "Thesis: “Facial Recognition Using Convolutional Neural Networks”, Honorable Mention",
-      "Ranked first position in the Systems Engineering graduating class",
-    ],
+    id: "uci",
+    school: "Universidad de Cuautitlán Izcalli",
+    place: "State of Mexico, Mexico",
+    degree: "B.Sc. in Computer Systems Engineering",
+    start: "2019-01",
+    end: "2022-08",
+    period: "Jan 2019 – Aug 2022",
+    bullets: ["Degree obtained"],
   },
 ];
 
-/* ───────────────────────── Work (built from résumé deliverables) ───────────────────────── */
+/* ───────────────────────── Work (built from resume deliverables) ───────────────────────── */
 
 export type Project = {
   id: string;
   index: string;
   title: string;
-  /** Company / context the work was done for, exactly as in the résumé. */
+  /** Company / context the work was done for, exactly as in the resume. */
   kicker: string;
   description: string;
   features: string[];
@@ -316,114 +253,55 @@ export type Project = {
 };
 
 /**
- * The résumé lists no standalone projects, so each panel is a concrete deliverable
- * named in a work-experience bullet (or the thesis). Wording is from the résumé.
+ * These panels describe documented professional deliverables, not independent public repositories.
  */
 export const PROJECTS: Project[] = [
   {
-    id: "fabric-etl",
+    id: "mtm-analytics",
     index: "01",
-    title: "Fabric ETL & Data Warehouse",
-    kicker: "Aditelsa — Client: Indra Minsait · 2025",
+    title: "Operational Analytics & Pricing Tools",
+    kicker: "MTM Soluciones · 2026",
     description:
-      "Designed and implemented end-to-end ETL processes in Microsoft Fabric, migrating legacy architecture into a modern cloud ecosystem.",
+      "Developed Excel-based tracking, pricing-analysis, and reporting tools to support operational decisions.",
     features: [
-      "End-to-end ETL in Microsoft Fabric",
-      "Legacy architecture → modern cloud",
-      "Data Warehouse architecture models",
-      "Centralised ingestion & transformation layers",
-      "Built for scalability and governance",
-      "Epics, tasks & subtasks in JIRA / Confluence",
+      "Excel-based ETL and data restructuring",
+      "Operational tracking and reporting",
+      "Product-pricing analysis",
+      "Business decision support",
     ],
-    tech: ["fabric", "etl", "warehouse", "jira", "confluence"],
+    tech: ["excel", "etl"],
     github: null,
   },
   {
-    id: "excel-migration",
+    id: "mtm-sharepoint",
     index: "02",
-    title: "Excel → Modern Stack Migration",
-    kicker: "Procesia Consulting — Client: INE · 2023–2025",
+    title: "Company SharePoint Workspace",
+    kicker: "MTM Soluciones · 2026",
     description:
-      "Directed the migration of legacy processes (90% Excel-based) to modern stacks (Python, SQL, Airflow).",
+      "Designed and administered an organization-wide SharePoint workspace for document management and collaboration.",
     features: [
-      "Manual Excel workflows reduced by 90%",
-      "Report delivery: from days to hours",
-      "Requirement gathering with stakeholders",
-      "Business needs → data-driven solutions",
+      "Document libraries and information architecture",
+      "Access groups and permissions",
+      "Lists, calendars, and homepage",
+      "Used across company departments",
     ],
-    tech: ["python", "airflow", "jira", "confluence"],
+    tech: ["sharepoint", "googleworkspace"],
     github: null,
   },
   {
-    id: "complaint-clustering",
+    id: "scale-quality",
     index: "03",
-    title: "AI Complaint Clustering",
-    kicker: "Crowdfarming · 2022–2023",
+    title: "AI Data Quality & Validation",
+    kicker: "Scale AI · 2021–2025",
     description:
-      "Built an AI-powered clustering solution for user complaints using Generative AI (LLMs, OpenAI API, n8n workflows).",
-    features: ["Generative AI (LLMs)", "OpenAI API", "n8n workflows", "Clustering of user complaints"],
-    tech: ["llm", "openai", "n8n"],
-    github: null,
-  },
-  {
-    id: "data-quality",
-    index: "04",
-    title: "Data Quality Program",
-    kicker: "Crowdfarming · 2022–2023",
-    description:
-      "Improved data consistency from 60% to 98% by developing a data quality program reconciling MongoDB and PostgreSQL sources.",
+      "Validated multimodal datasets and developed Python and SQL checks to support data integrity in machine-learning workflows.",
     features: [
-      "Data consistency: 60% → 98%",
-      "MongoDB ↔ PostgreSQL reconciliation",
-      "Database reporting in PostgreSQL",
-      "Delivered with Tableau and Streamlit",
+      "Python and SQL validation scripts",
+      "Multimodal dataset QA",
+      "Data-quality audits and error reporting",
+      "Collaboration with machine-learning teams",
     ],
-    tech: ["mongodb", "postgresql", "tableau", "streamlit"],
-    github: null,
-  },
-  {
-    id: "genomics-apps",
-    index: "05",
-    title: "Data-Driven Apps & Report Automation",
-    kicker: "InnovativeGX · 2020–2022",
-    description:
-      "Led full-cycle development of data-driven applications as both PM and Developer using Django, Flask, Linux Servers.",
-    features: [
-      "Automated JasperServer reports",
-      "Patient delivery time cut by 90%",
-      "Manual work cut by 80%",
-      "Snowflake for genetic datasets",
-      "Query time reduced by 40%",
-      "PM and Developer, full cycle",
-    ],
-    tech: ["django", "flask", "linux", "jasper", "snowflake"],
-    github: null,
-  },
-  {
-    id: "transit-warehouse",
-    index: "06",
-    title: "BigQuery Warehouse & Predictive Models",
-    kicker: "Vikua · 2018–2020",
-    description:
-      "Built a Data Warehouse in BigQuery using Cloud Functions and Looker Studio for GCP data visualization.",
-    features: [
-      "Predictive models: regression & classification",
-      "Public transport data",
-      "scikit-learn and Keras",
-      "Agile/SCRUM methodologies",
-      "Chatbot with Google Dialogflow",
-    ],
-    tech: ["bigquery", "gcp", "lookerstudio", "scikitlearn", "keras", "agile"],
-    github: null,
-  },
-  {
-    id: "facial-recognition",
-    index: "07",
-    title: "Facial Recognition with CNNs",
-    kicker: "Thesis · Universidad Metropolitana · 2019",
-    description: "Thesis: “Facial Recognition Using Convolutional Neural Networks”, Honorable Mention.",
-    features: ["Convolutional Neural Networks", "Facial recognition", "Honorable Mention", "Software Engineering thesis"],
-    tech: [],
+    tech: ["python", "warehouse"],
     github: null,
   },
 ];
@@ -443,44 +321,28 @@ export type CommunityItem = {
   image: string;
 };
 
-/** Provided directly by Alejandro (not in the résumé PDF). */
-export const COMMUNITY: CommunityItem[] = [
-  {
-    id: "volta",
-    name: "Volta Run Club",
-    kicker: "Website · built with AI · Madrid",
-    status: "Live",
-    description: "I built the website for Volta Run Club, the Madrid running community I run with, designing and shipping it with AI.",
-    url: "https://voltarunclub.es/",
-    domain: "voltarunclub.es",
-    image: "/community/volta.webp",
-  },
-  {
-    id: "activemarmenor",
-    name: "Active Mar Menor",
-    kicker: "Calisthenics · Volunteering",
-    status: "Volunteer",
-    description: "Where I trained calisthenics and volunteered.",
-    url: "https://activemarmenor.eu/",
-    domain: "activemarmenor.eu",
-    image: "/community/activemarmenor.webp",
-  },
-  {
-    id: "seijas",
-    name: "Seijas Fit Box",
-    kicker: "Website · CrossFit box",
-    status: "In progress",
-    description: "I'm currently updating the website for the CrossFit box where I train.",
-    url: "https://seijasfitbox.com/",
-    domain: "seijasfitbox.com",
-    image: "/community/seijas.webp",
-  },
-];
+/** No community projects supplied yet. */
+export const COMMUNITY: CommunityItem[] = [];
 
 /* ───────────────────────── Certifications ───────────────────────── */
 
-/** None listed in the résumé — the section and its nav link are omitted. */
-export const CERTIFICATIONS: { title: string; issuer: string; href?: string }[] = [];
+/** Credentials listed in Mauricio’s CV; verification URLs can be added later. */
+export const CERTIFICATIONS: {
+  title: string;
+  issuer: string;
+  href?: string;
+}[] = [
+  { title: "Google Data Analytics Professional Certificate", issuer: "Google" },
+  { title: "Data Science", issuer: "Oracle Next Education" },
+  { title: "Elements of AI", issuer: "University of Helsinki" },
+  {
+    title: "CCNA v7 (coursework and final exam completed)",
+    issuer: "Cisco Networking Academy",
+  },
+  { title: "Cybersecurity Essentials", issuer: "Cisco Networking Academy" },
+  { title: "NDG Linux Essentials", issuer: "Cisco Networking Academy" },
+  { title: "Python Essentials I", issuer: "Cisco Networking Academy" },
+];
 
 /* ───────────────────────── Achievements ───────────────────────── */
 
@@ -499,71 +361,31 @@ export type Achievement = {
 
 export const ACHIEVEMENTS: Achievement[] = [
   {
-    id: "jobarcelona",
-    icon: "trophy",
-    value: 2,
-    suffix: "nd",
-    label: "2nd Place, JOBarcelona Hackathon",
-    caption: "Camp Nou, JOBarcelona, NUWE · Jun 2022",
-    detail: "One-day hackathon using Python, TensorFlow, scikit-learn, pandas, Streamlit, and Graphext",
-  },
-  {
-    id: "class-rank",
-    icon: "medal",
-    value: 1,
-    suffix: "st",
-    label: "First in class",
-    caption: "Universidad Metropolitana · 2019",
-    detail: "Ranked first position in the Systems Engineering graduating class",
-  },
-  {
-    id: "gpa",
-    icon: "cap",
-    value: 17.28,
-    decimals: 2,
-    suffix: "/20",
-    label: "GPA",
-    caption: "Software Engineering · Universidad Metropolitana",
-    detail: "100% scholarship for academic merit",
-  },
-  {
-    id: "excel",
-    icon: "airflow",
-    value: 90,
-    prefix: "−",
-    suffix: "%",
-    label: "Manual Excel workflows",
-    caption: "Procesia Consulting — Client: INE",
-    detail: "Cutting report delivery times from days to hours",
-  },
-  {
-    id: "consistency",
-    icon: "postgresql",
-    value: 98,
-    suffix: "%",
-    label: "Data consistency",
-    caption: "Crowdfarming",
-    detail: "Up from 60%, reconciling MongoDB and PostgreSQL sources",
-  },
-  {
-    id: "patient-delivery",
+    id: "users",
     icon: "doc",
-    value: 90,
-    prefix: "−",
-    suffix: "%",
-    label: "Patient delivery time",
-    caption: "InnovativeGX",
-    detail: "Automated JasperServer reports — manual work down 80%",
+    value: 40,
+    prefix: "~",
+    label: "Users supported",
+    caption: "MTM Soluciones",
+    detail: "Sole IT owner supporting approximately 40 users and 60 devices",
   },
   {
-    id: "query-time",
-    icon: "snowflake",
-    value: 40,
-    prefix: "−",
+    id: "sops",
+    icon: "doc",
+    value: 4,
+    label: "SOPs authored",
+    caption: "MTM Soluciones",
+    detail: "Documented and standardized recurring operational processes",
+  },
+  {
+    id: "quality",
+    icon: "medal",
+    value: 80,
+    prefix: ">",
     suffix: "%",
-    label: "Query time",
-    caption: "InnovativeGX",
-    detail: "Integrated Snowflake for cross-referencing genetic datasets",
+    label: "Quality rate",
+    caption: "Scale AI",
+    detail: "Sustained quality rate above 80%, leading to promotion",
   },
 ];
 

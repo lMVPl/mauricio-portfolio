@@ -215,7 +215,7 @@ export default function Hero() {
             Let&apos;s talk
           </a>
           <a href={PROFILE.resume} download className="btn btn-ghost hero-fade" style={{ ["--i" as string]: 4 }}>
-            Résumé <span aria-hidden="true">↓</span>
+            Resume <span aria-hidden="true">↓</span>
           </a>
         </div>
       </div>

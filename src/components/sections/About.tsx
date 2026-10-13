@@ -187,11 +187,11 @@ export default function About() {
 
   const strap = `${PROFILE.name} · ${PROFILE.role} · `;
   const backLines = [
-    `${PROFILE.current.title} — ${PROFILE.current.org}, client ${PROFILE.current.client}`,
-    `${edu.degree} · GPA 17.28/20 · 100% merit scholarship`,
-    "Product Owner, from MVP to production-ready AI solutions",
-    [PROJECTS[0], PROJECTS[2], PROJECTS[3]].map((p) => p.title).join(" · "),
-    "1st in class · Thesis Honorable Mention · 2nd, JOBarcelona",
+    `${PROFILE.current.title} — ${PROFILE.current.org}`,
+    `${edu.degree} · ${edu.school}`,
+    PROFILE.aboutLine,
+    PROJECTS.slice(0, 3).map((p) => p.title).join(" · "),
+    PROFILE.quote,
   ];
 
   return (
@@ -208,7 +208,7 @@ export default function About() {
           </p>
           <div className="ab-btns rv" style={{ ["--i" as string]: 3 }}>
             <a className="btn btn-primary" href={PROFILE.resume} download>
-              Résumé <span aria-hidden="true">↓</span>
+              Resume <span aria-hidden="true">↓</span>
             </a>
             {PROFILE.github && (
               <a className="btn btn-ghost" href={PROFILE.github} target="_blank" rel="noopener noreferrer">
@@ -332,7 +332,7 @@ export default function About() {
               <div>
                 <dt>Current</dt>
                 <dd>
-                  {PROFILE.current.title} · {PROFILE.current.org} (client: {PROFILE.current.client})
+                  {PROFILE.current.title} · {PROFILE.current.org}
                 </dd>
               </div>
               <div>

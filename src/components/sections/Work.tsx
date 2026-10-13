@@ -58,7 +58,8 @@ const css = `
 }
 `;
 
-const isDesktop = () => window.matchMedia("(hover: hover) and (min-width: 900px)").matches;
+const isDesktop = () =>
+  window.matchMedia("(hover: hover) and (min-width: 900px)").matches;
 
 export default function Work() {
   const [open, setOpen] = useState(0);
@@ -88,10 +89,15 @@ export default function Work() {
       <style>{css}</style>
       <div className="wrap">
         <div className="wk-top">
-          <SectionHead id="work" label="Selected work" lead="Things I've" accent="built." />
+          <SectionHead
+            id="work"
+            label="Selected work"
+            lead="Things I've"
+            accent="built."
+          />
           <p className="wk-note rv">
-            Deliverables from my roles, in my résumé&apos;s words. The interfaces on the right are illustrative sketches, not
-            screenshots.
+            Deliverables from my roles, in my resume&apos;s words. The
+            interfaces on the right are illustrative sketches, not screenshots.
           </p>
         </div>
 
@@ -103,7 +109,10 @@ export default function Work() {
                 key={p.id}
                 className={`wk${isOpen ? " is-open" : ""}`}
                 onMouseEnter={() => isDesktop() && setOpen(i)}
-                onFocusCapture={(e) => (e.target as HTMLElement).matches(":focus-visible") && setOpen(i)}
+                onFocusCapture={(e) =>
+                  (e.target as HTMLElement).matches(":focus-visible") &&
+                  setOpen(i)
+                }
               >
                 <button
                   type="button"
@@ -116,13 +125,24 @@ export default function Work() {
                   <span className="wk-vt">{p.title}</span>
                   <span className="wk-plus" aria-hidden="true">
                     <svg width="12" height="12" viewBox="0 0 12 12">
-                      <path d="M6 1v10M1 6h10" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+                      <path
+                        d="M6 1v10M1 6h10"
+                        stroke="currentColor"
+                        strokeWidth="1.4"
+                        strokeLinecap="round"
+                      />
                     </svg>
                   </span>
                 </button>
                 <div className="wk-wrap">
                   <div>
-                    <div id={`wk-${p.id}`} className="wk-body" role="region" aria-labelledby={`wk-t-${p.id}`} inert={!isOpen}>
+                    <div
+                      id={`wk-${p.id}`}
+                      className="wk-body"
+                      role="region"
+                      aria-labelledby={`wk-t-${p.id}`}
+                      inert={!isOpen}
+                    >
                       <div className="wk-text">
                         <p className="wk-kick">
                           <b>{p.index}</b> {p.kicker}
@@ -146,13 +166,25 @@ export default function Work() {
                         )}
                         {p.github && (
                           <div className="wk-cta">
-                            <a className="btn btn-primary" href={p.github} target="_blank" rel="noopener noreferrer">
-                              View on GitHub <span className="arr" aria-hidden="true">↗</span>
+                            <a
+                              className="btn btn-primary"
+                              href={p.github}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              View on GitHub{" "}
+                              <span className="arr" aria-hidden="true">
+                                ↗
+                              </span>
                             </a>
                           </div>
                         )}
                       </div>
-                      <div className="wk-ui" role="img" aria-label={`Illustrative UI sketch for ${p.title} (not a screenshot)`}>
+                      <div
+                        className="wk-ui"
+                        role="img"
+                        aria-label={`Illustrative UI sketch for ${p.title} (not a screenshot)`}
+                      >
                         <MiniUI id={p.id} />
                         <span className="wk-ui-lbl">Illustrative UI</span>
                       </div>

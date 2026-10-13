@@ -79,7 +79,7 @@ export default function Skills() {
         <div className="sk-top">
           <SectionHead id="skills" label="Skills" lead="The periodic table of my" accent="stack." />
           <p className="sk-sub rv">
-            {ALL_SKILLS.length} elements from my résumé, grouped into {SKILL_GROUPS.length} families. Hover or focus a tile
+            {ALL_SKILLS.length} elements from my resume, grouped into {SKILL_GROUPS.length} families. Hover or focus a tile
             to inspect it.
           </p>
         </div>
@@ -171,7 +171,7 @@ export default function Skills() {
                 </>
               ) : (
                 <p className="insp-note" style={{ textTransform: "none", font: "inherit", fontSize: 13.5 }}>
-                  Listed in my résumé under {active.family}.
+                  Listed in my resume under {active.family}.
                 </p>
               )}
             </div>

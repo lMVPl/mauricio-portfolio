@@ -6,6 +6,13 @@ import type { CSSProperties, ReactNode } from "react";
  * `tint` is the official brand colour, used only for a very soft glow behind the logo.
  */
 export const BRAND: Record<string, { file: string; tint: string }> = {
+  excel: { file: "excel", tint: "#107C41" },
+  tableau: { file: "tableau", tint: "#4E79A7" },
+  googleworkspace: { file: "googleworkspace", tint: "#4285F4" },
+  odoo: { file: "odoo", tint: "#714B67" },
+  sharepoint: { file: "microsoftsharepoint", tint: "#0078D4" },
+  github: { file: "github", tint: "#181717" },
+  vscode: { file: "visualstudiocode", tint: "#007ACC" },
   python: { file: "python", tint: "#3776AB" },
   javascript: { file: "javascript", tint: "#F7DF1E" },
   dart: { file: "dart", tint: "#0175C2" },
@@ -55,6 +62,12 @@ const S = { fill: "none", stroke: "currentColor", strokeWidth: 1.25, strokeLinec
 
 /** Thin line icons for concepts (and for brands with no freely licensed logo — see README). */
 export const CONCEPT: Record<string, ReactNode> = {
+  datacleaning: (
+    <g {...S}><path d="M4 5h16M7 5l1 6 4 4v5l4-2v-3l4-4 1-6"/><path d="M9 9h6"/></g>
+  ),
+  datavalidation: (
+    <g {...S}><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 12l3 3 7-7"/></g>
+  ),
   etl: (
     <g {...S}>
       <rect x="2.5" y="5" width="5" height="5" rx="1" />

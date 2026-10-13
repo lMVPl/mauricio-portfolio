@@ -85,7 +85,7 @@ export function BookButton({ className, children }: { className: string; childre
             ×
           </button>
         </div>
-        {opened && <iframe src={PROFILE.booking} title="Book a call with Alejandro (Google Calendar)" />}
+        {opened && <iframe src={PROFILE.booking} title="Book a call (Google Calendar)" />}
       </dialog>
     </>
   );

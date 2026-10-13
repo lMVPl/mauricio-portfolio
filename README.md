@@ -1,4 +1,4 @@
-# Alejandro Marcano Van Grieken — Portfolio
+# Mauricio Vázquez Pérez — Portfolio
 
 A quiet, single-scroll portfolio: white, black and grays, one continuous surface.
 Next.js 15 (App Router) · React 19 · TypeScript · Tailwind CSS 4 · Lenis. No GSAP, no WebGL, no runtime third-party scripts.
@@ -19,7 +19,7 @@ Set `NEXT_PUBLIC_SITE_URL` (e.g. `https://example.com`) at build time so Open Gr
 Every word comes from `resume.pdf` and lives in **`src/lib/data.ts`**: `PROFILE`, `NAV`, `SKILL_GROUPS`,
 `EXPERIENCE`, `EDUCATION`, `PROJECTS`, `CERTIFICATIONS`, `ACHIEVEMENTS`. Components only read from it.
 
-Not in the résumé, so not on the site:
+Not in the resume, so not on the site:
 
 | Item | Status |
 | --- | --- |
@@ -28,10 +28,10 @@ Not in the résumé, so not on the site:
 | Certifications | `CERTIFICATIONS` is empty, so the section is not rendered and section numbers skip it. Add entries to bring it back. |
 | Project repos | `PROJECTS[].github` is `null`. Add a URL to show "View on GitHub ↗". |
 
-The **Work** panels are concrete deliverables named in the résumé's experience bullets (and the thesis). Each one is labelled with
+The **Work** panels are concrete deliverables named in the resume's experience bullets (and the thesis). Each one is labelled with
 its company. The mini interfaces beside them are grayscale sketches labelled "Illustrative UI", not screenshots.
 
-The ID card's `ID No.` (`AMVG-2019`: initials and graduation year) and `Dept.` (current discipline) are derived from the résumé.
+The ID card's `ID No.` (`AMVG-2019`: initials and graduation year) and `Dept.` (current discipline) are derived from the resume.
 
 ## Sections
 
@@ -82,7 +82,7 @@ What it does:
 
 ## Brand logos: credits and licences
 
-Logos are trademarks of their owners and are used only to identify the technologies listed in the résumé.
+Logos are trademarks of their owners and are used only to identify the technologies listed in the resume.
 
 - **Devicon** (`public/logos/*.svg`, "original" variants). MIT License, © 2015 konpa. See
   `public/logos/LICENSE-devicon.txt`. https://devicon.dev

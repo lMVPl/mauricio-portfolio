@@ -3,7 +3,7 @@ import SectionHead from "../ui/SectionHead";
 
 /**
  * Ink-flood index. Rendered only when CERTIFICATIONS has entries
- * (the current résumé lists none, so App skips this section).
+ * (the current resume lists none, so App skips this section).
  */
 const css = `
 .ce{background:var(--card);border-block:1px solid var(--line)}
@@ -26,13 +26,23 @@ const css = `
 
 export default function Certifications() {
   return (
-    <section id="certifications" className="section ce" aria-labelledby="certifications-title">
+    <section
+      id="certifications"
+      className="section ce"
+      aria-labelledby="certifications-title"
+    >
       <style>{css}</style>
       <div className="wrap ce-grid">
         <div className="ce-head">
-          <SectionHead id="certifications" label="Certifications" lead="Always" accent="learning." />
+          <SectionHead
+            id="certifications"
+            label="Certifications"
+            lead="Always"
+            accent="learning."
+          />
           <p className="ce-count rv">
-            {CERTIFICATIONS.length} certification{CERTIFICATIONS.length === 1 ? "" : "s"}
+            {CERTIFICATIONS.length} certification
+            {CERTIFICATIONS.length === 1 ? "" : "s"}
           </p>
         </div>
         <ol className="ce-list">
@@ -52,7 +62,12 @@ export default function Certifications() {
             return (
               <li key={c.title} className="rv" style={{ ["--i" as string]: i }}>
                 {c.href ? (
-                  <a className="ce-row" href={c.href} target="_blank" rel="noopener noreferrer">
+                  <a
+                    className="ce-row"
+                    href={c.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     {inner}
                   </a>
                 ) : (
