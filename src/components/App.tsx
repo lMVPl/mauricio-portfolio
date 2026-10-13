@@ -15,7 +15,9 @@ import { CERTIFICATIONS, COMMUNITY, PROJECTS, ACHIEVEMENTS } from "@/lib/data";
 export default function App() {
   return (
     <ScrollProvider>
-      <a href="#main" className="skip">Skip to content</a>
+      <a href="#main" className="skip">
+        Skip to content
+      </a>
       <style>{`.skip{position:fixed;left:16px;top:-60px;z-index:100;background:var(--ink);color:#fff;padding:10px 16px;border-radius:999px;font-size:14px;transition:top .4s var(--ease)}.skip:focus{top:16px}`}</style>
       <RevealObserver />
       <Navigation />
