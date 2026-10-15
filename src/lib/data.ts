@@ -14,16 +14,11 @@ export const PROFILE = {
   firstName: "Mauricio",
   initials: "MV",
   role: "Data Analyst",
-  roles: [
-    "Data Analyst",
-    "Data Quality Analyst",
-    "Data Science",
-    "IT & Operations Analyst",
-  ],
+  roles: ["Data Analyst", "Data Quality Analyst", "Data Science", "IT & Operations Analyst"],
   email: "mauriciovp00@outlook.com",
   phone: "+52 55 3471 7043",
   phoneHref: "tel:+525534717043",
-  location: "Cuautitlán Izcalli, Mexico",
+  location: "State of Mexico, Mexico",
   website: "",
   websiteLabel: "",
   github: "https://github.com/lMVPl",
@@ -34,8 +29,7 @@ export const PROFILE = {
     "Computer Systems Engineer with nearly four years of experience in data quality, AI data pipelines, and IT operations. Experienced in Python and SQL validation, multimodal dataset quality assurance, Excel-based ETL, reporting, and operational process improvement. Interested in Data Analyst and Data Science opportunities in Mexico or remotely.",
   aboutLine:
     "Computer Systems Engineer · Google Data Analytics · Oracle Next Education Data Science",
-  quote:
-    "Turning complex data into reliable insights and practical improvements.",
+  quote: "Turning complex data into reliable insights and practical improvements.",
   current: {
     title: "IT & Operations Analyst",
     org: "MTM Soluciones",
